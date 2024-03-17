@@ -51,15 +51,21 @@ def logoutUser(request):
 
 
 
-
+# second part
 def home(request):
     return render(request, 'gallery.html')
+
+
+
+
+def addPhoto(request):
+    return render(request, 'add.html')
+
+
+
 
 def about(request):
     return render(request, 'about.html')
 
 def contact(request):
     return render(request, 'contact.html')
-
-def addPhoto(request):
-    return render(request, 'add.html')

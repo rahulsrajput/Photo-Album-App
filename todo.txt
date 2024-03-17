@@ -3,7 +3,14 @@
 - basic django setup
 
 - templates & css setup
+    - add.html is important*
 
-- created forms.py for userCreation (register User)
+- created forms.py for userCreation (register User) & login
     
     - for login_register.html
+
+- User login views , logout view, register view done
+
+- cloudinary setup done for uploading images/media files
+
+- Home view where we render wallpapers
