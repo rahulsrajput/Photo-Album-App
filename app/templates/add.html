@@ -19,8 +19,11 @@
                             <option value='none'>Select a category...</option>
 
                             <!--  -->
-                            <option value='Nature'>Nature</option>
+                            {% for category in categories %}
+                            <option value='{{category.name}}'>{{category.name}}</option>
+                            {% endfor %}
                             <!--  -->
+                            
 
                         </select>
                     </div>

@@ -22,10 +22,10 @@
             <ul class="list-group">
                 <li class="list-group-item"><a href="{% url 'home' %}">All</a></li>
                 
-                <li class="list-group-item"><a href="">Travel</a></li>
-                <li class="list-group-item"><a href="">Nature</a></li>
-                <li class="list-group-item"><a href="">Abstract</a></li>
-            
+                {% for category in categories %}
+                <li class="list-group-item"><a href="{% url 'home' %}?category={{category.name}}">{{category.name}}</a></li>
+                {% endfor %}
+
             </ul>
         </div>
 
@@ -34,49 +34,15 @@
 
             <div class="row">
 
-
+                {% for photo in photos %}
                 <div class="col-md-4">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
+                    <a href="{{photo.image.url}}" target="_blank" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="{{photo.image.url}}"
                             alt="image">
                     </a>
                 </div>
+                {% endfor %}
 
-                <div class="col-md-4">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300"
-                            alt="image">
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300"
-                            alt="image">
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300"
-                            alt="image">
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
-                            alt="image">
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300"
-                            alt="image">
-                    </a>
-                </div>
-                
             </div>
         </div>
     </div>

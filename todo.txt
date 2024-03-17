@@ -13,4 +13,13 @@
 
 - cloudinary setup done for uploading images/media files
 
+- created Category model
+    - registered that mode in admin.py
+
+    
+- created Photo model
+    - registered that mode in admin.py
+    
+    
 - Home view where we render wallpapers
+

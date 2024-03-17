@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import register, customLogin
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponseRedirect
+from .models import Category, Photo
 
 # Create your views here.
 def loginUser(request):
@@ -53,13 +54,47 @@ def logoutUser(request):
 
 # second part
 def home(request):
-    return render(request, 'gallery.html')
+    category = request.GET.get('category')
+    user = request.user
+
+    if category == None:
+        photos = Photo.objects.all()
+    else:
+        photos = Photo.objects.filter(category__name = category)
+
+    categories = Category.objects.all()
+    return render(request, 'gallery.html', context={'categories':categories, 'photos':photos})
 
 
 
 
 def addPhoto(request):
-    return render(request, 'add.html')
+    user = request.user
+    # categories = user.category_set.all()
+    
+    categories = Category.objects.all()
+
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('images')
+        print(data) ,print(image)
+
+        if data['category'] != 'none':
+            category = Category.objects.get(name=data['category'])
+        
+        elif data['category_new'] != '':
+            category, created = Category.objects.get_or_create(user=user,name=data['category_new'])
+        
+        else:
+            category = None
+        
+        photo = Photo.objects.create(
+            category = category,
+            image = image
+        )
+        return HttpResponseRedirect('/')
+
+    return render(request, 'add.html', context={"categories":categories})
 
 
 

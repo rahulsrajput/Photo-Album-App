@@ -78,14 +78,21 @@ WSGI_APPLICATION = 'photoshare.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'QUxxNaMaaegkZRPMoJzHTXlYbIYbvlWo',
+#         'HOST': 'viaduct.proxy.rlwy.net',
+#         'PORT': '35753',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'QUxxNaMaaegkZRPMoJzHTXlYbIYbvlWo',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '35753',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
     }
 }
 
