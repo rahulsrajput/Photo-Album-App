@@ -21,5 +21,11 @@
     - registered that mode in admin.py
     
     
-- Home view where we render wallpapers
+- Home view where we render wallpapers(images)
+    - added filter(by Category)
 
+
+- addPhoto view where we add photo , select Category or create Category, and add images
+
+
+- vercel deployment changes
