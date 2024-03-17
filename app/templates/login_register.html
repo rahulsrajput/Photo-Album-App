@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Login/Register{% endblock %}
+
+{% block content %}
+
+<!-- login -->
+{% if page == 'login' %}
+<div class="section">
+    <div class="mt-5 mb-2">
+        <h3>Login</h3>
+    
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Login" class="btn btn-dark">
+        </form>
+    </div>
+    <p>Not have a account Register here <a href="{% url 'register' %}">Register</a></p>
+</div>
+{% endif %}
+
+
+<!-- register -->
+{% if page == 'register' %}
+<div class="section">
+    <div class=" mt-5 mb-2">
+        <h3>Register</h3>
+      
+        <form action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" value="Register" class="btn btn-dark">
+        </form>
+      </div>
+    <p>Have account Login <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endif %}
+
+
+{% endblock %}

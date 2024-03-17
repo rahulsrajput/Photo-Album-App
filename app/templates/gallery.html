@@ -1,0 +1,84 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Wallpapers{% endblock %}
+
+{% block content %}
+<style>
+    .list-group-item a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .img-thumbnail {
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
+
+<div class="section">
+
+    <div class="row">
+        <div class="col-md-3 mb-5">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="{% url 'home' %}">All</a></li>
+                
+                <li class="list-group-item"><a href="">Travel</a></li>
+                <li class="list-group-item"><a href="">Nature</a></li>
+                <li class="list-group-item"><a href="">Abstract</a></li>
+            
+            </ul>
+        </div>
+
+
+        <div class="col-md-9">
+
+            <div class="row">
+
+
+                <div class="col-md-4">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
+                            alt="image">
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300"
+                            alt="image">
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300"
+                            alt="image">
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300"
+                            alt="image">
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
+                            alt="image">
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="#" class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300"
+                            alt="image">
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

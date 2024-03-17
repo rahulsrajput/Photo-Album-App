@@ -1,0 +1,9 @@
+- created python vevn
+
+- basic django setup
+
+- templates & css setup
+
+- created forms.py for userCreation (register User)
+    
+    - for login_register.html
