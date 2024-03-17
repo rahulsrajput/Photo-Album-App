@@ -66,28 +66,48 @@
                 <div class="offcanvas-body d-flex flex-column p-4 p-lg-0 flex-lg-row">
                     <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
                         <!--  -->
+                        
+                        {% if user.is_authenticated %}
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">{{request.user | capfirst}}</a>
+                        </li>
+                        {% else %}
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="#">Guest</a>
                         </li>
-
+                        {% endif %}
                         
+
                         <!--  -->
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="{% url 'about' %}">About</a>
                         </li>
-
                         <!--  -->
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                         </li>
 
+                        
 
+                        {% if user.is_authenticated %}
+                        
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="{% url 'login' %}">Login/Register</a>
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                         </li>
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="{% url 'add' %}">Add Photo</a>
                         </li>
+
+                        {% else %}
+                        
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url 'login' %}">Login/Register</a>
+                        </li>
+                        
+                        {% endif %}
+
+
+                        
                     </ul>
 
                     <!-- github -->
