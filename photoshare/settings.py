@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$k&bdagjjhu@j17yd9h#t_un%1k(y2-2go84o-ivxla2fwubju'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -83,9 +83,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'QUxxNaMaaegkZRPMoJzHTXlYbIYbvlWo',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '35753',
+        'PASSWORD': os.environ.get("PASSWORD"),
+        'HOST': os.environ.get("HOST"),
+        'PORT': os.environ.get("PORT")
     }
 }
 
@@ -142,9 +142,9 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dmtucuzom',
-	'API_KEY': '193861647335541',
-	'API_SECRET': 'K41mh2hwosIxRooG_tgYWs6udCo'
+    'CLOUD_NAME': os.environ.get("CLOUD_NAME"),
+	'API_KEY': os.environ.get("API_KEY"),
+	'API_SECRET': os.environ.get("API_SECRET")
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
